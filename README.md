@@ -1,7 +1,7 @@
 # AutoBring — учебный монорепозиторий
 
 Сборка учебного проекта по курсу «Продвинутый React на практике» (см.
-`./docs/implementation-plan.md` и `./docs/course-curriculum.md` в исходном разговоре).
+[План реализации](./docs/implementation-plan.md) и [Программа курса](./docs/course-curriculum.md).
 
 ## Структура
 
