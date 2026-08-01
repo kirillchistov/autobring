@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AutoBring — авто из Японии, Кореи и Китая",
+  title: "AutoBring — автомобили из Японии с аукционов",
   description:
-    "Подбор, расчёт стоимости и отслеживание сделки при покупке автомобиля из Японии, Кореи или Китая.",
+    "Поможем купить, доставить и растаможить автомобиль из Японии под ключ. Прозрачный расчёт и статус сделки.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

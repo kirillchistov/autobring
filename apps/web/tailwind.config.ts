@@ -1,10 +1,7 @@
 import type { Config } from "tailwindcss";
 
-// Design direction (see design-tokens.md for rationale):
-// - Warm, paper-like neutral base instead of default slate/zinc/gray
-// - Single accent: a muted rust/copper, evoking cargo-ship rust and JDM
-//   tail-light amber without going full "orange CTA button" cliché
-// - Deliberately NOT purple/indigo (the default "AI product" gradient)
+// Light marketplace direction (Clutch / Cars & Bids inspired):
+// near-white surfaces, quiet ink, single rust accent — not purple/indigo.
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -15,44 +12,44 @@ const config: Config = {
     extend: {
       colors: {
         paper: {
-          50: "#FBFAF7",
-          100: "#F5F2EB",
-          200: "#EDE8DC",
-          300: "#DDD5C2",
-          400: "#C3B8A0",
+          50: "#FFFFFF",
+          100: "#F7F7F5",
+          200: "#EEEEEA",
+          300: "#DDDDD7",
+          400: "#B8B8B0",
         },
         ink: {
-          600: "#57534A",
-          700: "#3F3B33",
-          800: "#2B2822",
-          900: "#1B1915",
+          500: "#6B6B64",
+          600: "#4A4A45",
+          700: "#2E2E2A",
+          800: "#1A1A18",
+          900: "#111110",
         },
         rust: {
-          50: "#FCF1EC",
-          100: "#F5DACB",
-          300: "#DDA07C",
-          500: "#B85C38", // primary accent
-          600: "#9A4A2C",
-          700: "#7A3A22",
+          50: "#FDF4F0",
+          100: "#F8E0D6",
+          300: "#E08A66",
+          500: "#C45A32",
+          600: "#A34828",
+          700: "#83381F",
         },
         harbor: {
-          // secondary accent for status/timeline states — muted teal, not a
-          // generic "success green"
           400: "#7FA69C",
           500: "#5C8A7E",
           600: "#456A61",
         },
       },
       fontFamily: {
-        // Pairing: a display serif with a bit of character for headings,
-        // a workmanlike grotesk for body/UI text. Neither is Inter.
-        display: ["'Fraunces'", "serif"],
+        display: ["'Fraunces'", "Georgia", "serif"],
         sans: ["'Public Sans'", "system-ui", "sans-serif"],
       },
       borderRadius: {
         DEFAULT: "0.5rem",
         lg: "0.75rem",
-        xl: "1.25rem",
+        xl: "1rem",
+      },
+      boxShadow: {
+        soft: "0 1px 2px rgba(17,17,16,0.04), 0 8px 24px rgba(17,17,16,0.06)",
       },
     },
   },

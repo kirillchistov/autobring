@@ -30,7 +30,27 @@ node scripts/generate-dataset.mjs   # уже выполнено, файл в pac
 pnpm dev   # запускает web (:3000) и api (:4000) параллельно через turbo
 ```
 
-## Что уже готово (Sprint 0)
+## GitHub Pages (демо-лендинг)
+
+Статический экспорт `apps/web` деплоится Actions-ом на
+[kirillchistov.github.io/autobring](https://kirillchistov.github.io/autobring/).
+
+1. Репозиторий должен быть **public** (или GitHub Pro для private Pages).
+2. Settings → Pages → **Source: GitHub Actions**.
+3. Push в `main` (или ручной `workflow_dispatch`) запускает
+   [`.github/workflows/deploy-web.yml`](./.github/workflows/deploy-web.yml).
+
+Локальная проверка static-сборки:
+
+```bash
+pnpm --filter @autobring/web build:gh-pages
+# артефакт в apps/web/out  (basePath /autobring)
+```
+
+Полный продукт позже — на Vercel (`web`) + Render (`api`); Pages сейчас только
+для маркетингового демо без API.
+
+## Sprint 0. Готово
 
 - Монорепо на pnpm workspaces + Turborepo
 - `packages/shared-types` — единые типы для фронта и бэка
@@ -43,14 +63,14 @@ pnpm dev   # запускает web (:3000) и api (:4000) параллельн�
   Prisma в Sprint 1), `/cars` (список/фильтры/карточка, читает
   `packages/mock-data/cars.json`), `/cars/calculate` (использует
   `calculator-rates`), `/deals` (защищённый скелет)
-- `apps/web` — Next.js App Router, главная страница с применёнными
-  дизайн-токенами, Tailwind-конфиг с фирменной палитрой/типографикой
-  (см. `apps/web/design-tokens.md`)
+- `apps/web` — Next.js App Router, маркетинговый лендинг на дизайн-токенах,
+  Tailwind-конфиг с фирменной палитрой/типографикой
+  (см. `apps/web/design-tokens.md`), деплой демо на GitHub Pages
 - Синтетический датасет: **240 карточек** (120 JP / 60 KR / 60 CN),
   SVG-плейсхолдеры вместо фото — `packages/mock-data/cars.json`
 - Prisma-схема (`apps/api/prisma/schema.prisma`) — Car/User/Deal/Favorite/Alert
 
-## Что осознанно оставлено на следующие спринты
+## Cледующие спринты
 
 - Реальное подключение Prisma в auth/cars/deals роуты (сейчас частично заглушки —
   помечено `TODO(Sprint N)` в коде)

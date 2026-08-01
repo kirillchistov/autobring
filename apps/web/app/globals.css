@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,15 +10,86 @@
   --color-accent: theme("colors.rust.500");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   font-family: theme("fontFamily.sans");
+  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  font-family: theme("fontFamily.display");
-  letter-spacing: -0.01em;
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-ken {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-enter {
+  opacity: 0;
+  animation: hero-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-enter-delay-1 {
+  animation-delay: 60ms;
+}
+.hero-enter-delay-2 {
+  animation-delay: 160ms;
+}
+.hero-enter-delay-3 {
+  animation-delay: 260ms;
+}
+.hero-enter-delay-4 {
+  animation-delay: 360ms;
+}
+
+.hero-photo {
+  animation: hero-ken 12s ease-out forwards;
+  will-change: transform;
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-enter,
+  .hero-photo,
+  .fade-up {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }
