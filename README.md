@@ -69,6 +69,7 @@ pnpm --filter @autobring/web build:gh-pages
 - Синтетический датасет: **240 карточек** (120 JP / 60 KR / 60 CN),
   SVG-плейсхолдеры вместо фото — `packages/mock-data/cars.json`
 - Prisma-схема (`apps/api/prisma/schema.prisma`) — Car/User/Deal/Favorite/Alert
+- [Demo-версия для обсуждения дизайна на GH Pages](https://kirillchistov.github.io/autobring/)
 
 ## Cледующие спринты
 
